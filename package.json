@@ -1,0 +1,16 @@
+{
+  "name": "schoology-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes schoology and adds assignments to a calendar...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Colin and Akki",
+  "license": "ISC",
+  "dependencies": {
+    "jquerry": "^0.0.1-security",
+    "node-ical": "^0.15.3",
+    "request": "^2.88.2"
+  }
+}

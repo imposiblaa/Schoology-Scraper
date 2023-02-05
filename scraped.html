@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> schoology scraper </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Francois+One">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="scraped.css">
+    </head>
+
+    <body onload = "onload()">
+        <script src = "scraped.js"></script>
+
+        <i class="material-icons" onclick = "openForm()">settings</i>
+
+        <div class="popUp" id = "myForm">
+            <h2 id = "settingsTitle">Settings</h2>
+
+            <label for="summative"><b>Summative Study Period: </b></label>
+            <input type="text" name="summative" required class = "setInput" id = "summative">
+
+            <p class = "spacer"></p>
+
+            <label for="formative"><b>Formative Completion Period: </b></label>
+            <input type="text" name="formative" required class = "setInput" id = "formative">
+
+            <p class = "spacer"></p>
+
+            <button onclick="saveForm()">Save</button>
+
+            <button onclick="closeForm()">Close</button>
+
+            <p class = "spacer"></p>
+        </div>
+        
+        <h1> study schedule: </h1>
+
+        <div id = "week">            
+            <div id = "monday" class = "column">
+                <span id = "dOW">M</span>
+            </div>
+
+            <div id = "tuesday" class = "column">
+                <span id = "dOW">T</span>
+            </div>
+
+            <div id = "wednesday" class = "column">
+                <span id = "dOW">W</span>
+            </div>
+
+            <div id = "thursday" class = "column">
+                <span id = "dOW">Th</span>
+            </div>
+
+            <div id = "friday" class = "column">
+                <span id = "dOW">F</span>
+            </div>
+
+        </div>
+
+    </body>
+</html>

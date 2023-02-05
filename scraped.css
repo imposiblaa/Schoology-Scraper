@@ -1,0 +1,101 @@
+h1 {
+    color: rgb(8, 47, 175);
+    font-family: Francois One;
+    text-align: center;
+    font-size: 40px;
+}
+
+.column {
+    float: left;
+    width: 18%;
+    height: 450px;
+    padding: 10px;
+    font-family: Francois One;
+    color: rgb(8, 47, 175);
+    background-color: rgb(15, 39, 61);
+    margin: 3px;
+    border-radius: 15px;
+}
+
+#week:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    background-color: rgb(13, 29, 43);
+}
+
+#dOW {
+    font-size: 30px;
+    border-bottom: rgb(8, 47, 175);
+    border-style: solid;
+    border-left: rgba(72, 8, 175, 0);
+    border-top: rgba(72, 8, 175, 0);
+    border-right: rgba(72, 8, 175, 0);
+}
+
+.popUp {
+    display: none;
+    background-color: rgba(0,0,0,0.45);
+    border-radius: 10px;
+    border-width: 5px;
+    border-style: solid;
+    z-index: 9;
+    position: fixed;
+    bottom: 40%;
+    width: 30%;
+    margin-left: 33.9%;
+    margin-right: 35%;
+    align-items: center;
+    text-align: center;
+}
+
+.spacer{ 
+    font-size: 10px;
+}
+
+#settingsTitle {
+    margin: 10px;
+    font-family: Francois One;
+    color:rgb(8, 47, 175)
+}
+
+label {
+    font-family: Francois One;
+    color:rgb(8, 47, 175);
+    font-size: 15px;
+}
+
+input {
+    height: 25px;
+    width: 30px;
+    border-radius: 6px;
+    background-color:rgb(8, 47, 175);
+    font-family: Francois One;
+    color: black;
+}
+
+button {
+    font-family: Francois One;
+    height: 24px;
+    border-radius: 6px;
+    border-width: 0px;
+    margin-left: 10px;
+    background-color: rgb(8, 47, 175);
+    width: 90px;
+    cursor: pointer;
+}
+
+.material-icons {
+    color:rgb(8, 47, 175);
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    font-size: 40px;
+}
+
+.material-icons:hover {
+    cursor: pointer;
+}
