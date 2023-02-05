@@ -53,9 +53,9 @@ async function cacheAssignments(events) {
     resultEvents = [];
     for(var i in events){
         if(await isSummative(events[i].url.val)){
-            resultEvents.push([events[i].summary, events[i].description, 'Summative', events[i].url.val]);
+            resultEvents.push([events[i].summary, events[i].description, 'Summative', events[i].url.val, events[i].start]);
         }else{
-            resultEvents.push([events[i].summary, events[i].description, 'Formative', events[i].url.val]);
+            resultEvents.push([events[i].summary, events[i].description, 'Formative', events[i].url.val, events[i].start]);
         }
     }
     fs.writeFileSync("./assignmentCache.json", JSON.stringify(resultEvents));
@@ -78,21 +78,25 @@ function sortTwoWeeks(localPath, remotePath, demoMode) {
     var sortedEvents = [];
     const events = getCalEvents(localPath, remotePath);
     currentDate = new Date();
+    twoWeeks = new Date();
 
     if(demoMode){
         currentDate.setMonth(0);
+        twoWeeks.setMonth(0);
         currentDate.setDate(9);
+        twoWeeks.setDate(9);
     }
 
-    twoWeeks = new Date();
     twoWeeks.setDate(currentDate.getDate()+14);
     console.log(currentDate + ' | ' + twoWeeks);
-    for (const event of Object.values(events)) {
-        if(event.start > currentDate && event.start < twoWeeks){
-            sortedEvents.push(event);
+    events.then((response)=>{
+        for (const event of Object.values(response)) {
+            if(event.start > currentDate && event.start < twoWeeks){
+                sortedEvents.push(event);
+            }
         }
-    }
-    return sortedEvents;     
+        return sortedEvents;    
+    }); 
 };
 
 
@@ -100,20 +104,21 @@ function sortTwoWeeks(localPath, remotePath, demoMode) {
 
 
 function getCalEvents(localPath, remotePath){
+    return new Promise(function(resolve, reject){
+        const file = fs.createWriteStream(localPath);
+        const request = https.get(remotePath, function(response) {
+            response.pipe(file);
 
-    const file = fs.createWriteStream(localPath);
-    const request = https.get(remotePath, function(response) {
-        response.pipe(file);
-
-        
-        file.on("finish", () => {
-            file.close();
-            console.log("Download Completed");
+            
+            file.on("finish", () => {
+                file.close();
+                console.log("Download Completed");
+            });
         });
+
+
+        resolve(ical.sync.parseFile('./data/calendar.ics'));
     });
-
-
-    return ical.sync.parseFile('./data/calendar.ics');
 }
 
 module.exports = { sortTwoWeeks, getAssignments, cacheAssignments, getFormattedList };

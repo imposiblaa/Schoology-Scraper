@@ -53,7 +53,7 @@ body {
 }
 
 .spacer {
-    padding: 7.5px;
+    padding: 5px;
     display: block;
 }
 
@@ -105,5 +105,5 @@ button {
 }
 
 #cookie {
-    width: 300px;
+    width: 200px;
 }

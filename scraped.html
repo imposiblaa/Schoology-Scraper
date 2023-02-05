@@ -9,12 +9,17 @@
     </head>
 
     <body onload = "onload()">
-        <script src = "scraped.js"></script>
+        <script src = "./scraped.js"></script>
 
         <i class="material-icons" onclick = "openForm()">settings</i>
 
         <div class="popUp" id = "myForm">
             <h2 id = "settingsTitle">Settings</h2>
+
+            <label for="workTime"><b>Study Time per Day: </b></label>
+            <input type="text" name="workTime" required class = "setInput" id = "workTime">
+
+            <div class = "spacer"></div>
 
             <label for="summative"><b>Summative Study Period: </b></label>
             <input type="text" name="summative" required class = "setInput" id = "summative">
@@ -42,25 +47,32 @@
         <div id = "week">            
             <div id = "monday" class = "column">
                 <span id = "dOW">M</span>
+                <div id = "mondayHere" class = ""></div>
             </div>
 
             <div id = "tuesday" class = "column">
                 <span id = "dOW">T</span>
+                <div id = "tuesdayHere" class = ""></div>
             </div>
 
             <div id = "wednesday" class = "column">
                 <span id = "dOW">W</span>
+                <div id = "wednesdayHere" class = ""></div>
             </div>
 
             <div id = "thursday" class = "column">
                 <span id = "dOW">Th</span>
+                <div id = "thursdayHere" class = ""></div>
             </div>
 
             <div id = "friday" class = "column">
                 <span id = "dOW">F</span>
+                <div id = "fridayHere" class = ""></div>
             </div>
 
         </div>
-
+        
+        <div id = "sunday"><div id = "sundayHere" class = ""></div></div>
+        <div id = "saturday"><div id = "saturdayHere" class = ""></div></div>
     </body>
 </html>
