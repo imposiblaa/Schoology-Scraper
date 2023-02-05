@@ -5,8 +5,10 @@ remotePath = "https://puyallupsd.schoology.com/calendar/feed/ical/1675537677/9eb
 
 
 setDate = new Date();
-events = schoology.getAssignments(schoology.sortTwoWeeks(localPath, remotePath, true)); // "true" is to enable demo mode which sets the current date to 1-9-23 since the current grading term has no assignments left
-schoology.cacheAssignments(events);
+var events = (schoology.getFormattedList(localPath, remotePath));
+events.then((response) => {
+    console.log(response);
+});
 
 
 

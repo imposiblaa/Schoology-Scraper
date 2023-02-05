@@ -20,10 +20,13 @@ function closeForm() {
 function saveForm() {
     var summativePeriod = document.getElementById("summative").value
     var formativePeriod = document.getElementById("formative").value
+    var authKey = document.getElementById("cookie").value
 
     localStorage.setItem("summative", summativePeriod)
     localStorage.setItem("formative", formativePeriod)
+    localStorage.setItem("cookie", cookie)
 
     console.log(localStorage.getItem("summative"))
     console.log(localStorage.getItem("formative"))
+    console.log(localStorage.getItem("cookie"))
 }

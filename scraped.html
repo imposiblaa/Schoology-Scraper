@@ -4,7 +4,8 @@
         <title> schoology scraper </title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Francois+One">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="scraped.css">
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="./scraped.css">
     </head>
 
     <body onload = "onload()">
@@ -18,18 +19,22 @@
             <label for="summative"><b>Summative Study Period: </b></label>
             <input type="text" name="summative" required class = "setInput" id = "summative">
 
-            <p class = "spacer"></p>
+            <div class = "spacer"></div>
 
             <label for="formative"><b>Formative Completion Period: </b></label>
             <input type="text" name="formative" required class = "setInput" id = "formative">
 
-            <p class = "spacer"></p>
+            <div class = "spacer"></div>
+
+            <label for="auth"><b>Cookie: </b></label>
+            <input type="text" name="cookie" required class = "setInput" id = "cookie">
+
+            <div class = "spacer"></div>
 
             <button onclick="saveForm()">Save</button>
 
             <button onclick="closeForm()">Close</button>
 
-            <p class = "spacer"></p>
         </div>
         
         <h1> study schedule: </h1>
